@@ -6,7 +6,8 @@ import { Share2 } from "lucide-react";
 import { throttle } from "lodash";
 
 export function Dashboard() {
-  const [{ cursor, name, color }, updateMyPresence] = useMyPresence();
+  // const [{ cursor, name, color }, updateMyPresence] = useMyPresence();
+  const [{ name, color }, updateMyPresence] = useMyPresence();
   const others = useOthers();
 
   // Throttle cursor updates

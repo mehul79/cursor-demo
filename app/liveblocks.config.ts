@@ -2,7 +2,8 @@ import { createClient } from "@liveblocks/client";
 import { createRoomContext } from "@liveblocks/react";
 
 const client = createClient({
-  publicApiKey: "pk_dev_OXtP8Dlw57TZjwRqZGBy0PiHnicGis7VBlWySaDe8KCPPQpMn-qbOyW-x-_VTIOl", // Replace with your Liveblocks public key
+  publicApiKey:
+    "pk_dev_OXtP8Dlw57TZjwRqZGBy0PiHnicGis7VBlWySaDe8KCPPQpMn-qbOyW-x-_VTIOl", // Replace with your Liveblocks public key
 });
 
 // Presence represents the current user's presence in the room
@@ -13,9 +14,7 @@ type Presence = {
 };
 
 // Storage represents the shared document that persists in the room
-type Storage = {
-  // Add storage fields here if needed
-};
+type Storage = Record<string, never>;
 
 // User meta data that is only available on the server
 type UserMeta = {
@@ -27,7 +26,7 @@ type UserMeta = {
 };
 
 // Optionally, custom events
-type RoomEvent = {};
+type RoomEvent = Record<string, never>;
 
 export const {
   RoomProvider,
