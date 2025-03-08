@@ -1,13 +1,13 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { RoomProvider } from "./liveblocks.config";
 import { Dashboard } from "./components/Dashboard";
 import { EntryForm } from "./components/EntryForm";
 import { generateRandomColor } from "./utils/colors";
 
-export default function Home() {
+function Room() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [name, setName] = useState("");
@@ -38,5 +38,13 @@ export default function Home() {
     >
       <Dashboard />
     </RoomProvider>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Room />
+    </Suspense>
   );
 }
